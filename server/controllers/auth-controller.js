@@ -37,7 +37,7 @@ const home = async (req ,res ) => {
 
 const register = async (req, res) => {
     try{
-        console.log(req.body);      //ashish kumar jaiswal is bhakt of mata ji 
+        console.log(req.body);                                                //ashish kumar jaiswal is bhakt of mata ji 
         const {username , email, phone, password} = req.body;
 
         const userExist = await User.findOne({ email: email });
@@ -68,7 +68,8 @@ const register = async (req, res) => {
         });
         
     } catch(error) {
-        res.status(500).json(" internal server error"); 
+        // res.status(500).json(" internal server error"); 
+        next(error) ;
 
     }
 }

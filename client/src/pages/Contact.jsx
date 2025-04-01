@@ -25,7 +25,7 @@ export const Contact = () => {
     console.log(contact);
   };
 
-//  Help me reach 1 Million subs 👉 https://youtube.com/thapatechnical
+
 
   return (
     <>
@@ -39,7 +39,7 @@ export const Contact = () => {
             <img src="/images/support.png" alt="we are always ready to help" />
           </div>
 
-          {/* contact form content actual  */}
+          {/* contact form content actual */}
           <section className="section-form">
             <form onSubmit={handleSubmit}>
               <div>
