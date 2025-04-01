@@ -4,7 +4,7 @@ const { Schema } = require("zod");
 
 const validate = (Schema) => async (req, res, next) => { // here schema is the signupSchema and validate is working as a middleware
 
-    try{
+    try{ 
         const parseBody = await Schema.parseAsync(req.body); // this line tell that input user data is matching or not with the schema?
         req.body = parseBody;
         next();

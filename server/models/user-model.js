@@ -32,7 +32,7 @@ const userSchema = new mongoose.Schema({
 // or uske baad jakar database me ye data save hoga 
 
 userSchema.pre('save',async function(next){
-    // console.log(" pre method ",this); // here i have used this to check in the console that what is this and pata laga ki ye jo bhi user data input de rahe wo hai 
+    // console.log(" pre method ",this); // here i have used this to check in the console that what is "this" and pata laga ki ye jo bhi user data input de rahe wo hai 
 
     const user = this;
     if(!user.isModified() ){
@@ -80,7 +80,7 @@ userSchema.methods.comparePassword = async function (password) {
 
 // Signature: To verify that the sender of the JWT is who it says it is and to ensure that the message wasn't changed along the way, a signature is included.
 
-userSchema.methods.generateToken =  function() { 
+userSchema.methods.generateToken = async function() { 
     try{
         return jwt.sign({ //payloads :-
             userId: this._id.toString(),
@@ -99,11 +99,11 @@ userSchema.methods.generateToken =  function() {
     }
 } ; //now we can acess this anywhere in controller
 // here methods here is itself a method through which we can create a multiple methods or functions
-//  and we can use that anywhere
+//  and we can use that anywhere in the controllers. 
 
  
 
-
-const User = new mongoose.model("User", userSchema);   //define the model or the collection name 
+//define the model or the collection name 
+const User = new mongoose.model("User", userSchema);   
 
 module.exports = User;

@@ -8,7 +8,7 @@
 
 
 const express = require("express");
-const router = express.Router();
+const router = express.Router();       // express.Router() is a class
 const authcontrollers = require("../controllers/auth-controller"); // or // const {home ,register} = require("../controllers/auth-controller")
 const signupSchema = require("../validators/auth-validator");
 const validate = require('../middlewares/validate-middleware');
@@ -18,7 +18,7 @@ const validate = require('../middlewares/validate-middleware');
 
 //or 
 
-// router.route("/").get((req,res) => {
+// router.route("/").get((req,res) => {  
 //     res
 //     .status(200)    //res.status(200) is expressing that the HTTP response status should be set to 200 
 //     .send("welcome to world best mern site by ASHISH KUMAR JAISWAL");
@@ -33,6 +33,7 @@ router.route("/").get(authcontrollers.home);        //when we are writing home -
 
 router.route("/register")
 .post( validate(signupSchema) , authcontrollers.register ); 
+
 router.route("/login").post(authcontrollers.login);
 
 // post method is used to add all the details filled by user in registration or in login page 
