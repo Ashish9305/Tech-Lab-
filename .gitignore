@@ -1,0 +1,15 @@
+# NODE MODULES 
+client/node_modules/
+server/node/node_modules/
+
+#  ENV FILES 
+client/.env
+server/.env
+
+# ===================
+# System / IDE Files
+# ===================
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
